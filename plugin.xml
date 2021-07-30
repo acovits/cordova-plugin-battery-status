@@ -18,9 +18,7 @@
   under the License.
 -->
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-      id="cordova-plugin-battery-status"
-      version="2.0.4-dev">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-battery-status" version="2.0.4-dev">
     <name>Battery</name>
     <description>Cordova Battery Plugin</description>
     <license>Apache 2.0</license>
@@ -29,13 +27,13 @@
     <issue>https://github.com/apache/cordova-plugin-battery-status/issues</issue>
 
     <js-module src="www/battery.js" name="battery">
-        <clobbers target="navigator.battery" />
+        <clobbers target="cordova.plugins.battery" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Battery" >
+            <feature name="Battery">
                 <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
             </feature>
         </config-file>
@@ -51,7 +49,7 @@
             </feature>
         </config-file>
         <header-file src="src/ios/CDVBattery.h" />
-	    <source-file src="src/ios/CDVBattery.m" />
+        <source-file src="src/ios/CDVBattery.m" />
     </platform>
 
     <!-- windows -->
